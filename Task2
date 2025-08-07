@@ -1,0 +1,68 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class WeatherApp {
+
+    //  Replace this with your actual OpenWeatherMap API Key
+    private static final String API_KEY = "72404a177c976361db724e52a4d78f3a";
+
+    public static void main(String[] args) {
+        String city = "Hyderabad"; // You can change the city name here
+        getWeather(city);
+    }
+
+    public static void getWeather(String city) {
+        try {
+            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city +
+                    "&appid=" + API_KEY + "&units=metric";
+
+            URL url = new URL(urlString);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            conn.setRequestMethod("GET");
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(conn.getInputStream())
+            );
+
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+
+            in.close();
+
+            String json = response.toString();
+
+            // Basic string parsing (not ideal but works without libraries)
+            String cityName = getValue(json, "\"name\":\"", "\"");
+            String country = getValue(json, "\"country\":\"", "\"");
+            String temperature = getValue(json, "\"temp\":", ",");
+            String description = getValue(json, "\"description\":\"", "\"");
+
+            System.out.println("  Weather Report");
+            System.out.println("----------------------------");
+            System.out.println("City       : " + cityName + ", " + country);
+            System.out.println("Temperature: " + temperature + " °C");
+            System.out.println("Condition  : " + description);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    // Utility method to extract value from JSON string
+    public static String getValue(String json, String startKey, String endKey) {
+        try {
+            int start = json.indexOf(startKey) + startKey.length();
+            int end = json.indexOf(endKey, start);
+            return json.substring(start, end);
+        } catch (Exception e) {
+            return "N/A";
+        }
+    }
+}
