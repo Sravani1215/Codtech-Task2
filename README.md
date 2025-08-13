@@ -9,34 +9,32 @@
 
 ### Objective:
 The objective of this project is to demonstrate basic API integration and network programming in Java, including:
-##### **=>**Fetch real-time weather data for a city.
-##### **=>**Display temperature, city, country, and weather condition.
-##### **=>**Demonstrate HTTP requests in Java.
-##### **=>**Parse JSON data using simple string methods.
+##### **=>** Fetch real-time weather data for a city.
+##### **=>** Display temperature, city, country, and weather condition.
+##### **=>** Demonstrate HTTP requests in Java.
+##### **=>** Parse JSON data using simple string methods.
 
 ### Key Activities:
-##### **=>**Set up OpenWeatherMap API access.
-##### **=>**Send HTTP GET request to API.
-##### **=>**Read API response using BufferedReader.
-##### **=>**Parse JSON data with string methods.
-##### **=>**Display weather report on console.
-
-
+##### **=>** Set up OpenWeatherMap API access.
+##### **=>** Send HTTP GET request to API.
+##### **=>** Read API response using BufferedReader.
+##### **=>** Parse JSON data with string methods.
+##### **=>** Display weather report on console.
 
 ### Technologies Used:
-##### **=>**Set up OpenWeatherMap API access.
-##### **=>**Send HTTP GET request to API.
-##### **=>**Read API response using BufferedReader.
-##### **=>**Parse JSON data using string methods.
-##### **=>**Display weather report on console.
+##### **=>** Set up OpenWeatherMap API access.
+##### **=>** Send HTTP GET request to API.
+##### **=>** Read API response using BufferedReader.
+##### **=>** Parse JSON data using string methods.
+##### **=>** Display weather report on console.
 
 ### Conclusion:
 This project effectively showcases how to fetch and display real-time weather data in Java. It covers:
-##### **=>**Successfully fetches real-time weather.
-##### **=>**Displays city, temperature, and condition.
-##### **=>**Demonstrates Java networking and I/O.
-##### **=>**Simple JSON parsing works without libraries.
-##### **=>**Can be enhanced using JSON libraries or GUI.
+##### **=>** Successfully fetches real-time weather.
+##### **=>** Displays city, temperature, and condition.
+##### **=>** Demonstrates Java networking and I/O.
+##### **=>** Simple JSON parsing works without libraries.
+##### **=>** Can be enhanced using JSON libraries or GUI.
 
 
 
